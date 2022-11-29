@@ -1,4 +1,12 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 import streamlit as st
+import altair as alt
 
-st.markdown("# Page 2 ❄️")
-st.sidebar.markdown("# Page 2 ❄️")
+# loading Dataset 
+df1 = pd.read_csv('ChurnDataset.csv')
+st.title("Analysis of Telecommunications Services Data")
+
+st.markdown("Contract Dashboard")
+st.sidebar.markdown("Contract Dashboard")
