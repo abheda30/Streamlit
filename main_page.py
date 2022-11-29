@@ -4,33 +4,27 @@ import pandas as pd
 from vega_datasets import data
 
 # Data Sources
-counties = alt.topo_feature(data.us_10m.url, 'counties')
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+import altair as alt
 
-df_rates = pd.read_csv('unemployment.tsv', delimiter='\t')
-df_rates['rate_emp'] = 1 - df_rates['rate']
+st.markdown("# Main page 🎈")
+st.sidebar.markdown("# Main page 🎈")
 
-# Radio button
-option = st.radio("What to you want to show?", ('rate', 'rate_emp'))
+telecom_cust = pd.read_csv('ChurnDataset.csv', index_col='customerID')
 
-# title
-if option == 'rate':
-    st.write('Unemployment Rate')
-else:
-    st.write("Employment Rate")
+services = ['PhoneService','MultipleLines','InternetService','OnlineSecurity',
+           'OnlineBackup','DeviceProtection','TechSupport','StreamingTV','StreamingMovies']
 
-# MAP
-ch_map = alt.Chart(counties).mark_geoshape().encode(
-    color=option+':Q',
-    tooltip=['id:O', option+':Q']
-).transform_lookup(
-    lookup='id',
-    from_=alt.LookupData(df_rates, 'id', ['rate', 'rate_emp'])
-).project(
-    type='albersUsa'
-).properties(
-    width=600,
-    height=400
-)
-
-# Show 
-st.write(ch_map)
+fig, axes = plt.subplots(nrows = 3,ncols = 3,figsize = (15,12))
+for i, item in enumerate(services):
+    if i < 3:
+        ax = telecom_cust[item].value_counts().plot(kind = 'bar',ax=axes[i,0],rot = 0)
+        
+    elif i >=3 and i < 6:
+        ax = telecom_cust[item].value_counts().plot(kind = 'bar',ax=axes[i-3,1],rot = 0)
+        
+    elif i < 9:
+        ax = telecom_cust[item].value_counts().plot(kind = 'bar',ax=axes[i-6,2],rot = 0)
+    ax.set_title(item)
