@@ -1,16 +1,11 @@
 import streamlit as st
 import altair as alt
 import pandas as pd
-from vega_datasets import data
-
-# Data Sources
-import streamlit as st
-import pandas as pd
 import matplotlib.pyplot as plt
 import altair as alt
 
-st.markdown("# Main page 🎈")
-st.sidebar.markdown("# Main page 🎈")
+st.markdown("# Statistics of users by services")
+st.sidebar.markdown("# Services")
 
 telecom_cust = pd.read_csv('ChurnDataset.csv', index_col='customerID')
 
@@ -28,3 +23,5 @@ for i, item in enumerate(services):
     elif i < 9:
         ax = telecom_cust[item].value_counts().plot(kind = 'bar',ax=axes[i-6,2],rot = 0)
     ax.set_title(item)
+
+st.pyplot(fig)
