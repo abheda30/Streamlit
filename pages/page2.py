@@ -8,4 +8,3 @@ df1 = pd.read_csv('ChurnDataset.csv')
 st.title("Analysis of Telecommunications Services Data")
 
 st.markdown("Contract Dashboard")
-st.sidebar.markdown("Contract Dashboard")
