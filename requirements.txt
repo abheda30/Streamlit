@@ -4,3 +4,4 @@ altair
 vega_datasets
 matplotlib
 numpy
+plotly
