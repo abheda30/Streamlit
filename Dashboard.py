@@ -25,3 +25,4 @@ for i, item in enumerate(services):
     ax.set_title(item)
 
 st.pyplot(fig)
+
