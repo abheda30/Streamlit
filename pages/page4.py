@@ -1,8 +1,3 @@
-import streamlit as st
-
-st.markdown("Customer Churn Prediction")
-st.sidebar.markdown("Customer Churn Prediction")
-
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
