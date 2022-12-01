@@ -5,3 +5,4 @@ vega_datasets
 matplotlib
 numpy
 plotly
+seaborn
