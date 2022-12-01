@@ -9,7 +9,8 @@ import matplotlib.ticker as mtick
 
 #Loading dataset:
 data = pd.read_csv('ChurnDataset.csv')
-# st.title("Customer Churn Prediction ")
+
+st.title("Customer Churn Prediction ")
 
 list = ['Payment method','Tenure','Tenure for each contract', 'Contract']
 pageview = st.sidebar.radio('Select the page you want to view', list)
