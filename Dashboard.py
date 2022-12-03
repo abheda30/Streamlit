@@ -25,4 +25,26 @@ for i, item in enumerate(services):
     ax.set_title(item)
 
 st.pyplot(fig)
+st.markdown("# Paperless Billing users")
+paperless_billing_chart = alt.Chart(telecom_cust).mark_bar().encode(
+   x=alt.X('PaperlessBilling:N',axis=alt.Axis(title='Responses')),
+   y=alt.Y('count():Q',axis=alt.Axis(title='No. of Users')),
+   color=alt.Color('PaperlessBilling')      
+).properties(
+    width=800,
+    height=400
+)
 
+st.write(paperless_billing_chart)
+
+st.markdown("# Payment mode")
+payment_chart = alt.Chart(telecom_cust).mark_bar().encode(
+   x=alt.X('PaymentMethod:N',axis=alt.Axis(title='Responses')),
+   y=alt.Y('count():Q',axis=alt.Axis(title='No. of Users')),
+   color=alt.Color('PaymentMethod')      
+).properties(
+    width=800,
+    height=400
+)
+
+st.write(payment_chart)
