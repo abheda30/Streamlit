@@ -31,7 +31,7 @@ After cloning this repository you can run the Streamlit app using the following 
 
 ### (2) Create a Git repository ###
 
-* On GitHub or BitBucket create an empty repository. Note that you need to have an account on these platforms. In my case, I used BitBucket and created an empty repository called `test-streamlit`, [https://bitbucket.org/uqlab/test-streamlit.git](https://bitbucket.org/uqlab/test-streamlit.git)
+* On GitHub or BitBucket create an empty repository. Note that you need to have an account on these platforms. In my case, I used BitBucket and created an empty repository called `streamlit`, [https://bitbucket.org/abheda/streamlit.git](https://bitbucket.org/abheda/streamlit.git)
 * Commit and push your files into your repository. In my case I executed the following commands in my folder (note that the git url will be different for you and the name of the datafiles as well):
 ```
 git init
@@ -53,7 +53,7 @@ git push origin master
 ```
 npm install -g heroku
 ```
-* Create a new app on Heroku using the following commands. In my case, I called the app `uncc-test-streamlit`
+* Create a new app on Heroku using the following commands. In my case, I called the app `uncc-va-project`
 ```
 heroku login
 heroku create uncc-va-project
@@ -67,7 +67,7 @@ https://uncc-va-project.herokuapp.com/ | https://bitbucket.org/abheda/streamlit.
 
 ### (4) Deploy your app on Heroku ###
 
-* To deploy your app on Heroku you need to push your files in the Heroku git repository, which was returned at the time of app creation. In my case this is `https://git.heroku.com/uncc-test-streamlit.git` and I have executed the following commands:
+* To deploy your app on Heroku you need to push your files in the Heroku git repository, which was returned at the time of app creation. In my case this is `https://git.heroku.com/uncc-va-project.git` and I have executed the following commands:
 ```
 git remote add heroku https://git.heroku.com/uncc-va-project.git
 git push heroku master
@@ -80,4 +80,4 @@ remote:        https://uncc-va-project.herokuapp.com/ deployed to Heroku
 remote:
 remote: Verifying deploy... done.
 ```
-* At this point you can access your app using the provided URL. In my case: [https://uncc-test-streamlit.herokuapp.com/](https://uncc-test-streamlit.herokuapp.com/)
+* At this point you can access your app using the provided URL. In my case: [https://uncc-va-project.herokuapp.com/](https://uncc-va-project.herokuapp.com//)
